@@ -1,6 +1,125 @@
-\documentclass{article}
- 
+%TODO get rid of bullet points before company
+\documentclass[10pt, letterpaper]{article}
+\usepackage[letterpaper,margin=0.75in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{mdwlist}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{tgpagella}
+\pagestyle{empty}
+\setlength{\tabcolsep}{0em}
+
+% indentsection style, used for sections that aren't already in lists
+% that need indentation to the level of all text in the document
+\newenvironment{indentsection}[1]%
+{\begin{list}{}%
+	{\setlength{\leftmargin}{#1}}%
+	\item[]%
+}
+{\end{list}}
+
+% opposite of above; bump a section back toward the left margin
+\newenvironment{unindentsection}[1]%
+{\begin{list}{}%
+	{\setlength{\leftmargin}{-0.5#1}}%
+	\item[]%
+}
+{\end{list}}
+
+% format two pieces of text, one left aligned and one right aligned
+\newcommand{\headerrow}[2]
+{\begin{tabular*}{\linewidth}{l@{\extracolsep{\fill}}r}
+	#1 &
+	#2 \\
+\end{tabular*}}
+
+% make "C++" look pretty when used in text by touching up the plus signs
+\newcommand{\CPP}
+{C\nolinebreak[4]\hspace{-.05em}\raisebox{.22ex}{\footnotesize\bf ++}}
+
 \begin{document}
-First document. This is a simple example, with no 
-extra parameters or packages included.
+\begin{center}
+Ryan Bell
+\\
+(267) 893 0688 \textbullet RyanBell@mail.rit.edu \textbullet github.com/Ryan-Bell
+\end{center}
+
+\hrule
+
+\subsection*{Education}
+Rochester Institute of Technology, Rochester, NY Spring 2019 BS in Game Design and Development - Minor in Software Engineering
+
+\subsection*{Experience}
+\begin{itemize}
+	\parskip=0.1em
+
+	\item
+	\headerrow
+		{\textbf{MITRE Corporation}}
+		{\textbf{Bedford, MA}}
+	\\
+	\headerrow
+		{\emph{Software Developer}}
+		{\emph{Summer 2017}}
+	\begin{itemize*}
+		\item Worked extensively with javascript and Node.js to create a Skype presentation visualization site Additional experience with Microsoft’s Lync 2013 SDK (C\#)
+	\end{itemize*}
+
+	\item
+	\headerrow
+		{\textbf{General Electric Aviation}}
+		{\textbf{Grand Rapids, MI}}
+	\\
+	\headerrow
+		{\emph{Software Engineer}}
+		{\emph{Fall 2016}}
+	\begin{itemize*}
+			\item Created an npm module for including GE’s OAuth SSO service into new sites Optimized and refactored a Flask-Angular tool used to manage employee work assignments Created a Node.js site to track employee hours, send email warnings and updates, and let them see man hour breakdowns online
+	\end{itemize*}
+
+	\item
+	\headerrow
+		{\textbf{BrickSimple, LLC}}
+		{\textbf{Doylestown, PA}}
+	\\
+	\headerrow
+		{\emph{VR/AR Developer}}
+		{\emph{Summer 2016, January 2016, January 2017}}
+	\begin{itemize*}
+			\item Created numerous apps for the HTC vive and LEAP motion in Unity handling both the 3D modeling/animation aspects as well as programming aspects Implemented custom Java servlets for a public facing Apache Tomcat server to facilitate the serving of non-local assets and fix a pressing issue presented by the client Designed and implemented the front and back end of an admin portal to upload, remove, and reorganize public facing content for the client. The feature was built with Flask, and included zip file support, dynamically created SQL statements, and technologies like Jinja, JavaScript, and JQuery Created a reusable Python script to convert existing JSON arrays to SQL tables in Microsoft SQL Server
+	\end{itemize*}
+
+	\item
+	\headerrow
+		{\textbf{RIT Information Technology Services}}
+		{\textbf{Rochester, NY}}
+	\\
+	\headerrow
+		{\emph{Customer Support}}
+		{\emph{2014 -- 2016}}
+	\begin{itemize*}
+			\item Resolved issues involving a wide variety of devices and applications
+	\end{itemize*}
+
+	\item
+	\headerrow
+		{\textbf{RIT Computer Science Department}}
+		{\textbf{Rochester, NY}}
+	\\
+	\headerrow
+		{\emph{Computer Science Grader}}
+		{\emph{Fall 2015}}
+	\begin{itemize*}
+			\item Graded weekly Python assignments for CSCI 141
+	\end{itemize*}
+
+\end{itemize}
+
+%\subsection*{Projects}
+		%HealthNet - Django-Based Hospital Website Lead developer on a four person team that used Django, HTML5, CSS, and JavaScript to successfully realize the semester-long project outcomes. Followed Google’s Material Design while utilizing Agile principles to establish an iterative and incremental design and build process SwitchBlade - 2D Game in C\# Technical lead on a four person team to develop a MonoGame-based game that implemented procedural map generation, advanced pathfinding, and strong AI
+
+%\subsection*{Other}
+%Eagle Scout, RIT Presidential Scholarship recipient, Dean’s List
+%Moderate experience with Linux, Docker, bash and common Linux Utilities
+
 \end{document}
